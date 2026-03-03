@@ -33,6 +33,7 @@ class ApiClient {
         sendTimeout: const Duration(seconds: 30),
       ),
     );
+    // TODO: Add retry interceptor here: QueuedInterceptorsWrapper(onError: (error, handler) async { ... })
     dio.interceptors.add(_authInterceptor);
     dio.interceptors.add(PrettyDioLogger(responseBody: true, requestBody: true));
     return dio;

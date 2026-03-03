@@ -36,6 +36,7 @@ class TemplateApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      // TODO: Adjust design size based on your target device's screen dimensions
       designSize: const Size(400, 840),
       minTextAdapt: true,
       splitScreenMode: true,
