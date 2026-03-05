@@ -1,9 +1,8 @@
-import 'package:template/di/locator.dart';
-
 import '../../core/resource/data_state.dart';
 import '../../core/usecase/usecase.dart';
 import '../../data/remote/repository/template_repository.dart';
 import '../../data/remote/service/exception.dart';
+import '../../di/locator.dart';
 
 class TemplateUsecase extends UseCase<DataState<String>, void> {
   final _repository = locator.get<TemplateRepository>();

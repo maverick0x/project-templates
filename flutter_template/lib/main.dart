@@ -5,8 +5,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:template/core/config/themes/mode.dart';
 
+import 'core/config/themes/mode.dart';
 import 'core/utilities/logger.dart';
 import 'di/locator.dart';
 
