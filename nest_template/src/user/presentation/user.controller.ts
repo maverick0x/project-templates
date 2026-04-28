@@ -1,11 +1,19 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
-import { CreateUserUseCase } from "../application/use-cases/create-user.usecase";
-import { CreateUserDto } from "../domain/dto/create-user.dto";
-import { GetUserUseCase } from "../application/use-cases/get-user.usecase";
-import { ListUsersUseCase } from "../application/use-cases/list-users.usecase";
-import { UpdateUserUseCase } from "../application/use-cases/update-user.usecase";
-import { DeleteUserUseCase } from "../application/use-cases/delete-user.usecase";
-import { UpdateUserDto } from "../domain/dto/update-user.dto";
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
+import { CreateUserUseCase } from '../application/use-cases/create-user.usecase';
+import { CreateUserDto } from '../domain/dto/create-user.dto';
+import { GetUserUseCase } from '../application/use-cases/get-user.usecase';
+import { ListUsersUseCase } from '../application/use-cases/list-users.usecase';
+import { UpdateUserUseCase } from '../application/use-cases/update-user.usecase';
+import { DeleteUserUseCase } from '../application/use-cases/delete-user.usecase';
+import { UpdateUserDto } from '../domain/dto/update-user.dto';
 
 @Controller({
   path: 'user',
