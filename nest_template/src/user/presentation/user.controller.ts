@@ -26,7 +26,7 @@ export class UserController {
     private readonly listUsersUseCase: ListUsersUseCase,
     private readonly deleteUserUseCase: DeleteUserUseCase,
     private readonly updateUserUseCase: UpdateUserUseCase,
-  ) { }
+  ) {}
 
   @Post()
   async createUser(@Body() request: CreateUserDto) {

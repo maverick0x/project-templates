@@ -1,6 +1,6 @@
-import { Injectable } from "@nestjs/common";
-import { UserRepositoryPort } from "src/user/application/ports/user.repository.port";
-import { User } from "src/user/domain/entities/user_entity";
+import { Injectable } from '@nestjs/common';
+import { UserRepositoryPort } from 'src/user/application/ports/user.repository.port';
+import { User } from 'src/user/domain/entities/user_entity';
 
 @Injectable()
 export class InMemoryUserRepository implements UserRepositoryPort {
@@ -26,5 +26,4 @@ export class InMemoryUserRepository implements UserRepositoryPort {
   delete(id: string) {
     this.users.delete(id);
   }
-
 }
