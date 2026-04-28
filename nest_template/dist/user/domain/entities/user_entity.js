@@ -18,7 +18,7 @@ class User {
     }
     static create(name, email) {
         if (!name || name.trim().length < 2) {
-            throw new Error("Name must be at least 2 characters long");
+            throw new Error('Name must be at least 2 characters long');
         }
         return new User(new user_id_vo_1.UserId(), name.trim(), new email_vo_1.Email(email), new Date(), new Date());
     }
@@ -39,7 +39,7 @@ class User {
     }
     updateName(name) {
         if (!name || name.trim().length < 2) {
-            throw new Error("Name must be at least 2 characters long");
+            throw new Error('Name must be at least 2 characters long');
         }
         this.name = name;
         this.updatedAt = new Date();
@@ -60,7 +60,7 @@ class User {
             email: this.email.getValue(),
             createdAt: this.createdAt,
             updatedAt: this.updatedAt,
-            accountAge: this.getAccountAge()
+            accountAge: this.getAccountAge(),
         };
     }
 }

@@ -11,12 +11,11 @@ const common_1 = require("@nestjs/common");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     const configService = app.get(config_service_1.ConfigService);
-    const allowedOrigins = configService.get('ALLOWED_ORIGINS')?.split(',')?.filter(Boolean) ?? [];
+    const allowedOrigins = configService.get('ALLOWED_ORIGINS')?.split(',')?.filter(Boolean) ??
+        [];
     app.use((0, index_mjs_1.default)());
     app.enableCors({
-        origin: process.env.NODE_ENV === 'production'
-            ? allowedOrigins
-            : true,
+        origin: process.env.NODE_ENV === 'production' ? allowedOrigins : true,
         methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
         allowedHeaders: ['Content-Type', 'Authorization', 'x-api-key'],
         credentials: false,
@@ -31,5 +30,5 @@ async function bootstrap() {
     const port = configService.get('PORT', 3000);
     await app.listen(port);
 }
-bootstrap();
+void bootstrap();
 //# sourceMappingURL=main.js.map

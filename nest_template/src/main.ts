@@ -9,13 +9,13 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
 
   // In production: load from .env (e.g. ALLOWED_ORIGINS=https://app.yourdomain.com,https://dashboard.yourdomain.com)
-  const allowedOrigins = configService.get<string>('ALLOWED_ORIGINS')?.split(',')?.filter(Boolean) ?? [];
+  const allowedOrigins =
+    configService.get<string>('ALLOWED_ORIGINS')?.split(',')?.filter(Boolean) ??
+    [];
 
   app.use(helmet());
   app.enableCors({
-    origin: process.env.NODE_ENV === 'production'
-      ? allowedOrigins
-      : true,
+    origin: process.env.NODE_ENV === 'production' ? allowedOrigins : true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'x-api-key'], // custom headers goes here
     credentials: false,
@@ -31,4 +31,4 @@ async function bootstrap() {
   const port = configService.get<number>('PORT', 3000);
   await app.listen(port);
 }
-bootstrap();
+void bootstrap();

@@ -1,4 +1,4 @@
-import { UserRepositoryPort } from "../ports/user.repository.port";
+import { UserRepositoryPort } from '../ports/user.repository.port';
 export declare class DeleteUserUseCase {
     private readonly userRepository;
     constructor(userRepository: UserRepositoryPort);

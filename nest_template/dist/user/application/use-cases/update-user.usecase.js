@@ -23,7 +23,7 @@ let UpdateUserUseCase = class UpdateUserUseCase {
     async execute(id, dto) {
         const user = await this.userRepository.findById(id);
         if (!user) {
-            throw new common_1.NotFoundException("User not found!");
+            throw new common_1.NotFoundException('User not found!');
         }
         if (dto.name) {
             user.updateName(dto.name);

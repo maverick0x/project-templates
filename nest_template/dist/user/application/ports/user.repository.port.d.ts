@@ -1,4 +1,4 @@
-import { User } from "src/user/domain/entities/user_entity";
+import { User } from 'src/user/domain/entities/user_entity';
 export interface UserRepositoryPort {
     save(user: User): Promise<User> | User;
     findById(id: string): Promise<User | null> | User | null;
