@@ -10,7 +10,7 @@ export class User {
     private updatedAt: Date,
   ) {}
 
-  static create(name: String, email: string) {
+  static create(name: string, email: string) {
     if (!name || name.trim().length < 2) {
       throw new Error('Name must be at least 2 characters long');
     }

@@ -4,11 +4,12 @@ import { APP_GUARD } from '@nestjs/core/constants';
 import { ThrottlerGuard } from '@nestjs/throttler/dist/throttler.guard';
 import { ThrottlerModule } from '@nestjs/throttler/dist/throttler.module';
 import { UserModule } from './user/user.module';
+import { KycModule } from './kyc/kyc.module';
 
 @Module({
   imports: [
     // ENV Configuration
-    ConfigModule.forRoot({ isGlobal: true, cache: true, }),
+    ConfigModule.forRoot({ isGlobal: true, cache: true }),
     // Rate Limiting
     ThrottlerModule.forRoot([
       {
@@ -22,14 +23,15 @@ import { UserModule } from './user/user.module';
         limit: 20,
       },
     ]),
-    UserModule
+    UserModule,
+    KycModule,
   ],
   controllers: [],
   providers: [
     {
       provide: APP_GUARD,
-      useClass: ThrottlerGuard
-    }
+      useClass: ThrottlerGuard,
+    },
   ],
 })
-export class AppModule { }
+export class AppModule {}

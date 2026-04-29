@@ -13,13 +13,14 @@ const constants_1 = require("@nestjs/core/constants");
 const throttler_guard_1 = require("@nestjs/throttler/dist/throttler.guard");
 const throttler_module_1 = require("@nestjs/throttler/dist/throttler.module");
 const user_module_1 = require("./user/user.module");
+const kyc_module_1 = require("./kyc/kyc.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            config_1.ConfigModule.forRoot({ isGlobal: true, cache: true, }),
+            config_1.ConfigModule.forRoot({ isGlobal: true, cache: true }),
             throttler_module_1.ThrottlerModule.forRoot([
                 {
                     name: 'short',
@@ -32,14 +33,15 @@ exports.AppModule = AppModule = __decorate([
                     limit: 20,
                 },
             ]),
-            user_module_1.UserModule
+            user_module_1.UserModule,
+            kyc_module_1.KycModule,
         ],
         controllers: [],
         providers: [
             {
                 provide: constants_1.APP_GUARD,
-                useClass: throttler_guard_1.ThrottlerGuard
-            }
+                useClass: throttler_guard_1.ThrottlerGuard,
+            },
         ],
     })
 ], AppModule);

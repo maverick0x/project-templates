@@ -7,7 +7,7 @@ export declare class User {
     private createdAt;
     private updatedAt;
     constructor(id: UserId, name: string, email: Email, createdAt: Date, updatedAt: Date);
-    static create(name: String, email: string): User;
+    static create(name: string, email: string): User;
     getId(): UserId;
     getName(): string;
     getEmail(): Email;
